@@ -10,17 +10,14 @@ import {
   DollarSign,
   PieChart,
   BarChart3,
-  UserCheck,
-  MessageSquare,
-  Calendar,
-  BookOpen,
   ChevronDown,
   ChevronRight,
   User,
   Settings,
   LogOut,
+  Database,
+  Table,
 } from 'lucide-react';
-
 import {
   Sidebar,
   SidebarContent,
@@ -48,6 +45,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Logo } from './Logo';
+import { Badge } from './ui/badge';
 
 interface NavigationItem {
   title: string;
@@ -56,22 +54,30 @@ interface NavigationItem {
     title: string;
     icon: any;
     href?: string;
+    comingSoon?: boolean;
   }[];
 }
 
 const menuItems: NavigationItem[] = [
   {
+    title: 'Database',
+    icon: Database,
+    items: [
+      { title: 'Overview', icon: BarChart3, href: '/database/overview' },
+      { title: 'Tables', icon: Table, href: '/database/tables' },
+    ],
+  },
+  {
     title: 'Sales',
     icon: TrendingUp,
     items: [
-      { title: 'Pipeline', icon: BarChart3, href: '/sales/pipeline' },
-      { title: 'Leads', icon: Users, href: '/sales/leads' },
-      {
-        title: 'Opportunities',
-        icon: DollarSign,
-        href: '/sales/opportunities',
-      },
       { title: 'Reports', icon: PieChart, href: '/sales/reports' },
+      {
+        title: 'Pipeline',
+        icon: BarChart3,
+        href: '/sales/pipeline',
+        comingSoon: true,
+      },
     ],
   },
   {
@@ -84,39 +90,26 @@ const menuItems: NavigationItem[] = [
         icon: DollarSign,
         href: '/fintech/transactions',
       },
-      { title: 'Analytics', icon: PieChart, href: '/fintech/analytics' },
-      { title: 'Compliance', icon: UserCheck, href: '/fintech/compliance' },
     ],
   },
   {
     title: 'CRM',
     icon: Users,
     items: [
+      { title: 'Overview', icon: BarChart3, href: '/crm/overview' },
       { title: 'Contacts', icon: Users, href: '/crm/contacts' },
-      {
-        title: 'Communications',
-        icon: MessageSquare,
-        href: '/crm/communications',
-      },
-      { title: 'Activities', icon: Calendar, href: '/crm/activities' },
-      { title: 'Reports', icon: BarChart3, href: '/crm/reports' },
     ],
   },
   {
     title: 'School Management',
     icon: GraduationCap,
-    items: [
-      { title: 'Students', icon: Users, href: '/school/students' },
-      { title: 'Courses', icon: BookOpen, href: '/school/courses' },
-      { title: 'Schedule', icon: Calendar, href: '/school/schedule' },
-      { title: 'Reports', icon: BarChart3, href: '/school/reports' },
-    ],
+    items: [{ title: 'Overview', icon: Users, href: '/school/overview' }],
   },
 ];
 
 export function AppSidebar() {
   const [openSections, setOpenSections] = useState<string[]>(['Fintech']);
-  const pathname = usePathname(); // 👈 current path
+  const pathname = usePathname();
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) =>
@@ -166,18 +159,27 @@ export function AppSidebar() {
                           return (
                             <SidebarMenuItem key={subItem.title}>
                               {subItem.href ? (
-                                <SidebarMenuButton
-                                  className={`text-sm cursor-pointer ${
-                                    isActive
-                                      ? 'bg-sidebar-accent text-sidebar-accent-foreground'
-                                      : ''
-                                  }`}
+                                <a
+                                  href={
+                                    subItem.comingSoon
+                                      ? '/coming-soon'
+                                      : subItem.href
+                                  }
                                 >
-                                  <subItem.icon className='h-4 w-4' />
-                                  <a href={subItem.href}>
+                                  <SidebarMenuButton
+                                    className={`text-sm ${
+                                      isActive
+                                        ? 'bg-sidebar-accent text-sidebar-accent-foreground'
+                                        : ''
+                                    }`}
+                                  >
+                                    <subItem.icon className='h-4 w-4' />
                                     <span>{subItem.title}</span>
-                                  </a>
-                                </SidebarMenuButton>
+                                    {subItem.comingSoon && (
+                                      <Badge variant={'secondary'}>Soon</Badge>
+                                    )}
+                                  </SidebarMenuButton>
+                                </a>
                               ) : (
                                 <SidebarMenuButton className='text-sm'>
                                   <subItem.icon className='h-4 w-4' />

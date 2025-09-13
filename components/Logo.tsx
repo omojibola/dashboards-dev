@@ -12,7 +12,7 @@ export function Logo({ className }: { className?: string }) {
         <div className='w-2 h-6 bg-foreground transform -skew-x-12' />
         <div className='w-2 h-6 bg-foreground transform -skew-x-12' />
       </div>
-      <span className='font-mono text-lg font-medium ml-2'>
+      <span className='font-mono text-sm font-medium ml-2'>
         dashboards.studio
       </span>
     </div>

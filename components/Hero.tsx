@@ -137,7 +137,7 @@ export default function Hero() {
             variant='outline'
             size='lg'
             data-testid='button-view-gallery'
-            onClick={() => router.push('/gallery')}
+            onClick={() => router.push('/database/overview')}
           >
             View Gallery
           </Button>

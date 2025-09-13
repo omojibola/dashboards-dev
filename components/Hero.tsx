@@ -4,10 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Copy, Check, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-const TYPEWRITER_COMMAND = 'npx add dashboardstudio/analytics-dashboard';
+const TYPEWRITER_COMMAND =
+  'npx dashboard-studio add analytics/analytics-dashboard';
 
 export default function Hero() {
+  const router = useRouter();
+
   const [displayedCommand, setDisplayedCommand] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -129,7 +133,12 @@ export default function Hero() {
             Get Started
             <ArrowRight className='w-4 h-4 ml-2' />
           </Button>
-          <Button variant='outline' size='lg' data-testid='button-view-gallery'>
+          <Button
+            variant='outline'
+            size='lg'
+            data-testid='button-view-gallery'
+            onClick={() => router.push('/gallery')}
+          >
             View Gallery
           </Button>
         </motion.div>

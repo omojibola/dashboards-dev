@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation'; // 👈 import pathname hook
+import { usePathname } from 'next/navigation';
+import { ElementType } from 'react';
 import {
   CreditCard,
   Users,
@@ -49,10 +50,10 @@ import { Badge } from './ui/badge';
 
 interface NavigationItem {
   title: string;
-  icon: any;
+  icon: ElementType;
   items: {
     title: string;
-    icon: any;
+    icon: ElementType;
     href?: string;
     comingSoon?: boolean;
   }[];

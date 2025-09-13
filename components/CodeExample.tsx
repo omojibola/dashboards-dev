@@ -11,7 +11,7 @@ import Image from 'next/image';
 const examples = [
   {
     name: 'Analytics Dashboard',
-    command: 'npx add dashboardstudio/analytics-dashboard',
+    command: 'npx dashboard-studio add analytics/dashboard',
     description:
       'Complete analytics dashboard with charts, metrics, and data tables',
     tags: ['Charts', 'Tables', 'KPIs'],
@@ -20,7 +20,7 @@ const examples = [
   },
   {
     name: 'E-commerce Admin',
-    command: 'npx add dashboardstudio/ecommerce-admin',
+    command: 'npx dashboard-studio add ecommerce/overview',
     description:
       'Product management, orders, and customer analytics for online stores',
     tags: ['Products', 'Orders', 'Customers'],
@@ -29,7 +29,7 @@ const examples = [
   },
   {
     name: 'CRM Dashboard',
-    command: 'npx add dashboardstudio/crm-dashboard',
+    command: 'npx dashboard-studio add crm/overview',
     description:
       'Customer relationship management with pipeline and contact views',
     tags: ['Contacts', 'Pipeline', 'Tasks'],
@@ -38,7 +38,7 @@ const examples = [
   },
   {
     name: 'Finance Tracker',
-    command: 'npx add dashboardstudio/finance-tracker',
+    command: 'npx dashboard-studio add fintech/overview',
     description:
       'Financial dashboard with budgets, expenses, and investment tracking',
     tags: ['Budgets', 'Expenses', 'Reports'],
@@ -67,7 +67,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: '',
     },
   },
 };
@@ -146,7 +146,7 @@ export default function CodeExample() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {filteredExamples.map((example, index) => (
-            <motion.div key={index} variants={cardVariants}>
+            <motion.div key={index}>
               <Card className='hover-elevate transition-all duration-200 bg-muted/50'>
                 <CardContent className='p-6'>
                   {/* Header with title, tags, and copy button */}

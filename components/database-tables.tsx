@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ElementType, useState } from 'react';
 import { PageHeader } from '@/components/page-header';
 import {
   Card,
@@ -62,7 +62,7 @@ interface DatabaseTable {
   lastModified: string;
   status: 'active' | 'inactive' | 'migrating';
   type: 'table' | 'view';
-  icon: any;
+  icon: ElementType;
 }
 
 const tables: DatabaseTable[] = [

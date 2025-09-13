@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Github } from 'lucide-react';
-import Image from 'next/image';
 import { Logo } from './Logo';
 
 export default function Header() {

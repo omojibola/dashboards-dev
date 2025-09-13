@@ -290,7 +290,9 @@ export function FintechTransactions() {
         <Card>
           <CardHeader>
             <CardTitle>Spending by Category</CardTitle>
-            <CardDescription>This month's category breakdown</CardDescription>
+            <CardDescription>
+              This month&apos;s category breakdown
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <ChartContainer

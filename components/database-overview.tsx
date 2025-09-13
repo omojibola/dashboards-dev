@@ -219,13 +219,15 @@ export function DatabaseOverview() {
             <div className='space-y-4'>
               <div className='flex items-center gap-3 text-sm'>
                 <div className='w-2 h-2 bg-green-500 rounded-full' />
-                <span className='flex-1'>Table 'users' backup completed</span>
+                <span className='flex-1'>
+                  Table &apos;users&apos; backup completed
+                </span>
                 <span className='text-muted-foreground'>2 min ago</span>
               </div>
               <div className='flex items-center gap-3 text-sm'>
                 <div className='w-2 h-2 bg-blue-500 rounded-full' />
                 <span className='flex-1'>
-                  New index created on 'orders.customer_id'
+                  New index created on &apos;orders.customer_id&apos;
                 </span>
                 <span className='text-muted-foreground'>15 min ago</span>
               </div>

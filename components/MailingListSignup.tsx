@@ -60,7 +60,8 @@ export default function MailingListSignup() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  We'll notify you when new dashboard components are available.
+                  We&apos;ll notify you when new dashboard components are
+                  available.
                 </motion.p>
               </CardContent>
             </Card>

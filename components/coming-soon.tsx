@@ -28,7 +28,7 @@ export function ComingSoon({
             </Button>
 
             <p className='text-xs text-muted-foreground'>
-              We're working hard to bring you this feature. Stay tuned!
+              We&apos;re working hard to bring you this feature. Stay tuned!
             </p>
           </div>
         </CardContent>

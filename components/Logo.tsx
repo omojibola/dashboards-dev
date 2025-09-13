@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { Badge } from './ui/badge';
 
 export function Logo({ className }: { className?: string }) {
   const router = useRouter();
@@ -15,6 +16,7 @@ export function Logo({ className }: { className?: string }) {
       <span className='font-mono text-sm font-medium ml-2'>
         dashboards.studio
       </span>
+      <Badge>Beta</Badge>
     </div>
   );
 }

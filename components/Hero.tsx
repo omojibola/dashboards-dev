@@ -6,8 +6,7 @@ import { Button } from './ui/button';
 import { Copy, Check, ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-const TYPEWRITER_COMMAND =
-  'npx dashboard-studio add analytics/analytics-dashboard';
+const TYPEWRITER_COMMAND = 'npx dashboard-studio add fintech/overview';
 
 export default function Hero() {
   const router = useRouter();

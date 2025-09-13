@@ -495,7 +495,7 @@ export function CrmOverview() {
 
         <Card>
           <CardHeader className='pb-3'>
-            <CardTitle className='text-sm'>Today's Goals</CardTitle>
+            <CardTitle className='text-sm'>Today&apos;s Goals</CardTitle>
           </CardHeader>
           <CardContent>
             <div className='space-y-3'>

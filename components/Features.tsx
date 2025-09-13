@@ -55,18 +55,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
-  },
-};
-
 export default function Features() {
   return (
     <section id='features' className='py-24 px-4 md:px-8'>
@@ -95,7 +83,7 @@ export default function Features() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index}>
               <Card className='hover-elevate transition-all duration-200 h-full'>
                 <CardContent className='p-6 space-y-4'>
                   <div className='flex items-center gap-3'>

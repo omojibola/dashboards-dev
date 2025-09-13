@@ -60,7 +60,17 @@ export default function Header() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <Button variant='outline' size='sm' data-testid='button-github'>
+            <Button
+              variant='outline'
+              size='sm'
+              data-testid='button-github'
+              onClick={() =>
+                window.open(
+                  'https://github.com/omojibola/dashboards-dev-cli',
+                  '_blank'
+                )
+              }
+            >
               <Github className='w-4 h-4 mr-2' />
               GitHub
             </Button>

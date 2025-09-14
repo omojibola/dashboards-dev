@@ -71,7 +71,6 @@ export default function CodeExample() {
       setTimeout(() => setCopiedIndex(null), 2000);
     } catch (err) {
       console.warn('Failed to copy to clipboard:', err);
-      // Fallback: could implement a different method or show error message
     }
   };
 

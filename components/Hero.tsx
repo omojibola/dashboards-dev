@@ -128,7 +128,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <Button size='lg' data-testid='button-get-started'>
+          <Button
+            size='lg'
+            data-testid='button-get-started'
+            onClick={() => router.push('/database/overview')}
+          >
             Get Started
             <ArrowRight className='w-4 h-4 ml-2' />
           </Button>

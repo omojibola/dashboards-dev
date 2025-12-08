@@ -1,13 +1,9 @@
-export default async (request: Request) => {
-  const ip = request.headers.get('x-nf-client-connection-ip');
+export default async (request: Request, context: any) => {
+  // geo always lives on context.geo
+  const geo = context.geo;
 
-  const geo = {
-    country: request.headers.get('x-nf-geo-country'),
-    region: request.headers.get('x-nf-geo-subdivision'),
-    city: request.headers.get('x-nf-geo-city'),
-    latitude: request.headers.get('x-nf-geo-latitude'),
-    longitude: request.headers.get('x-nf-geo-longitude'),
-  };
+  // IP is usually context.ip. If not available, fallback to header.
+  const ip = context.ip ?? request.headers.get('x-nf-client-connection-ip');
 
   const userAgent = request.headers.get('user-agent');
   const path = new URL(request.url).pathname;
